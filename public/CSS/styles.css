@@ -1,7 +1,105 @@
+/* General */
+
 *{
     font-family: 'Roboto';
 }
 
+body {
+    min-height: 100vh;
+    padding: 100px;
+    position: relative;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #00fffc;
+}
+
+.row {
+    margin: 0;
+}
+
+.container-fluid {
+    padding:0;
+}
+
+.btn-primary {
+    background-color: #0fe;
+    border: 2px solid #0f9;
+}
+
+.btn-primary:hover {
+    background-color: #00fffc;
+    border: #0f9c;
+}
+
+/* navbar */
+
+
 #navbar img {
     width: 50px;
+}
+
+#navbar {
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 5px 0;
+}
+
+#navbar a {
+    font-size: 14px;
+    color: #727272;
+}
+
+#navbar a:hover {
+    color: #0f9;
+}
+
+/* Search container */
+
+#search-container {
+    background-image: url("../img/helpdesk.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    padding: 50px;
+    text-align: center;
+}
+
+#search-container h1 {
+    color: #0fe;
+    margin-bottom: 30px;
+    font-weight: 900    ;
+}
+
+#search-container form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Tasks list */ 
+
+#events-container {
+    padding: 50px;
+}
+
+#events-container h2 {
+    margin-bottom: 10px;
+}
+
+#events-container .subtitle {
+    color: #727272;
+    margin-bottom: 30px;
+}
+
+#cards-container {
+    display: flex;
+}
+
+#events-container card{
+    flex: 1 1 0;
+    max-width: 25%;
+    border-radius: 10px;
+    padding: 0;
+    margin: 5px;
 }
