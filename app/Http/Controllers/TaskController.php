@@ -10,9 +10,19 @@ class TaskController extends Controller
     {
         public function index(){
 
-            $tasks = Task::all();
+            $search = request('search');
 
-            return view('welcome', ['tasks'=> $tasks]);
+            if($search) {
+
+                $tasks = Task::where([
+                    ['title', 'like', '%'.$search.'%']
+                ])->get();
+
+            } else {
+                $tasks = Task::all();
+            } 
+
+            return view('welcome', ['tasks'=> $tasks, 'search' => $search]);
         }  
         
         public function create(){

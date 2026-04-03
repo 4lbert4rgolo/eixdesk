@@ -12,5 +12,7 @@ class Task extends Model
     protected $casts = [
         'items' => 'array'
     ];
+
+    protected $dates = ['deadline'];
     
 }

@@ -130,11 +130,34 @@ header {
 }
 
 .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff; 
     border: none;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: 0.3s;
     overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    display: block;
+}
+
+.card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.card-text {
+    flex-grow: 1; 
+    margin-bottom: 1rem;
 }
 
 .card:hover {
@@ -199,20 +222,20 @@ header {
 
 .items-list li {
     display: flex;
-    align-items: center; /* Alinha o ícone verticalmente ao centro do texto */
-    margin-bottom: 8px;   /* Espaçamento entre os itens */
-    gap: 10px;           /* Espaço entre o ícone e o texto */
-    color: #cbd5e0;      /* Cor cinza claro para combinar com o tema dark */
+    align-items: center; 
+    margin-bottom: 8px;  
+    gap: 10px;           
+    color: #cbd5e0;      
 }
 
 .items-list li ion-icon {
-    font-size: 1.2rem;   /* Tamanho do ícone */
-    color: #4fd1c5;      /* Cor verde água (Teal) para destaque */
-    flex-shrink: 0;      /* Impede que o ícone diminua se o texto for grande */
+    font-size: 1.2rem;  
+    color: #4fd1c5;   
+    flex-shrink: 0;      
 }
 
 .items-list li span {
-    line-height: 1.4;    /* Melhora a leitura de textos longos */
+    line-height: 1.4;    
 }
 
 /* ==========================================================================
