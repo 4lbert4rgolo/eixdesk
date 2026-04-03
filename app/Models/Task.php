@@ -14,5 +14,9 @@ class Task extends Model
     ];
 
     protected $dates = ['deadline'];
+
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
     
 }

@@ -12,7 +12,7 @@
             <div id="info-container" class="col-md-6">
                 <h1>{{ $task->title }}</h1>
                 <p class="task-deadline"><ion-icon name="calendar-outline"></ion-icon>{{ \Carbon\Carbon::parse($task->deadline)->format('d/m/Y') }}</p>
-                <p class="task-owner"><ion-icon name="person-outline"></ion-icon>Proprietário da tarefa</p>
+                <p class="task-owner"><ion-icon name="person-outline"></ion-icon>Proprietário da tarefa: {{$taskOwner['name']}}</p>
                 <p class="task-responsible"><ion-icon name="person-outline"></ion-icon>Responsável</p>
                 <a href="#" class="btn btn-primary" id="task-submit">Iniciar tarefa</a>
                <h3>Segue informações sobre o chamado:</h3>

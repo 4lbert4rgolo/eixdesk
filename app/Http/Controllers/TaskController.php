@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Task;
+use App\Models\User;
 
 class TaskController extends Controller
     {
@@ -37,7 +38,7 @@ class TaskController extends Controller
             $task->description = $request->description;
             $task->deadline = $request->deadline;
             $task->priority = $request->priority;
-            $task->items = $request->items;
+            $task->items = $request->items ?? [];
 
             // Image Upload
 
@@ -55,6 +56,9 @@ class TaskController extends Controller
 
             }
 
+            $user = auth()->user();
+            $task->user_id = $user->id;
+
             $task->save();
 
             return redirect('/')->with('msg', 'Tarefa criada com sucesso!');
@@ -65,7 +69,9 @@ class TaskController extends Controller
 
             $task = Task::findOrFail($id);
 
-            return view('tasks.show', ['task' => $task]);
+            $taskOwner = User::where('id', $task->user_id)->first()->toArray();
+
+            return view('tasks.show', ['task' => $task, 'taskOwner' => $taskOwner]);
 
         }
     }
