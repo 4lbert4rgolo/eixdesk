@@ -18,7 +18,7 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid" id="navbar">
                     <a href="/" class="navbar-brand">
-                        <img src="/img/eixdesk_logo.png" alt="AlpDesk Solutions">
+                        <img src="/img/alpdesk_logo.png" alt="AlpDesk Solutions">
                     </a>
                     
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-nav">

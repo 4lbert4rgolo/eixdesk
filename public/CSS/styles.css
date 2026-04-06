@@ -41,7 +41,9 @@ header {
 }
 
 .navbar-brand img {
-    width: 45px;
+    width: 120px;
+    height: auto;
+    max-width: 100%;
     transition: transform 0.3s;
 }
 
@@ -242,6 +244,24 @@ header {
 
 .items-list li span {
     line-height: 1.4;    
+}
+
+/* ==========================================================================
+   Dashboard
+   ========================================================================== */
+
+.dashboard-title-container {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.dashboard-tasks-container th {
+    width: 25%;
+
+}
+
+.dashboard-tasks-container form {
+    display: inline-block;
 }
 
 /* ==========================================================================

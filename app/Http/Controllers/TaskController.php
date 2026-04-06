@@ -74,5 +74,23 @@ class TaskController extends Controller
             return view('tasks.show', ['task' => $task, 'taskOwner' => $taskOwner]);
 
         }
+
+        public function dashboard() {
+
+            $user = auth()->user();
+
+            $tasks = $user->tasks;
+
+            return view('tasks.dashboard', ['tasks' => $tasks]);
+
+        }
+
+        public function destroy($id) {
+
+            Task::findOrFail($id)->delete();
+
+            return redirect('/dashboard')->with('msg', 'Tarefa excluída com sucesso!');
+
+        }
     }
 
