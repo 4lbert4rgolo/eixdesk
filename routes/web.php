@@ -17,8 +17,8 @@ Route::get('/contact', function () {
 
 Route::get('/dashboard', [TaskController::class, 'dashboard'])->middleware('auth');
 
-Route::get('/tarefas', function () {
-    return view('tasks');
-});
+Route::post('/tasks/join/{id}', [TaskController::class, 'joinTask'])->middleware('auth');
+
+
 
 

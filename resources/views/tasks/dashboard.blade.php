@@ -23,7 +23,7 @@
                 <tr>
                     <td scope="row">{{ $loop->index + 1}}</td>
                     <td><a href="/tasks/{{ $task->id }}"> {{ $task->title }}</a></td>
-                    <td>0</td>
+                    <td>{{ $task->user->name }}</td>
                     <td>
                         <a href="tasks/edit/{{ $task->id }}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a>
                         <form action="tasks/{{ $task->id }}" method="POST">

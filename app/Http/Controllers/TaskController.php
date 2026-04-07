@@ -81,7 +81,9 @@ class TaskController extends Controller
 
             $tasks = $user->tasks;
 
-            return view('tasks.dashboard', ['tasks' => $tasks]);
+            $taskAsParticipants = $user->taskAsParticipants;
+
+            return view('tasks.dashboard', ['tasks' => $tasks, 'tasksAsParticipants' => $taskAsParticipants]);
 
         }
 
@@ -124,6 +126,18 @@ class TaskController extends Controller
             Task::findOrFail($request->id)->update($data);
 
             return redirect('/dashboard')->with('msg', 'Tarefa atualizada com sucesso!');
+
+        }
+
+        public function joinTask($id) {
+
+            $user = auth()->user();
+
+            $user->tasksAsParticipants()->attach($id);
+
+            $task = Task::findOrFail($id);
+
+            return redirect('/dashboard')->with('msg', 'Tarefa inicializada!');
 
         }
 

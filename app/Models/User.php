@@ -71,4 +71,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function tasksAsParticipants() {
+        return $this->belongsToMany('App\Models\Task');
+    }
 }
